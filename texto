@@ -1,0 +1,17 @@
+# **Projeto Intermediário**
+
+Vamos aplicar todos os conceitos aprendidos — manipulação de JSON, operações CRUD e gerenciamento de dados estruturados — para construir um projeto intermediário robusto e prático: um **sistema de carrinho de compras**. Este projeto simula uma funcionalidade essencial de qualquer site de e-commerce e demonstra o poder do `localStorage` para criar uma experiência de usuário persistente e fluida, que funciona até mesmo entre sessões de navegação.
+
+### **Projeto: Sistema de Carrinho de Compras**
+
+**Objetivo:** Criar uma página de produtos simples onde o usuário pode adicionar itens a um carrinho de compras. O estado do carrinho deve ser salvo no `localStorage`, permitindo que os itens permaneçam lá mesmo que o usuário feche o navegador e retorne mais tarde. O carrinho deve exibir a lista de produtos, suas quantidades, o subtotal por item e o total geral.
+
+**Funcionalidades:**
+
+1. Exibir uma lista de produtos disponíveis.
+2. Permitir que o usuário adicione um produto ao carrinho.
+3. Se o produto já estiver no carrinho, aumentar sua quantidade em vez de adicioná-lo novamente.
+4. Exibir o conteúdo do carrinho em uma seção separada da página.
+5. Permitir que o usuário altere a quantidade de um item no carrinho ou o remova.
+6. Calcular e exibir dinamicamente o preço total do carrinho.
+7. Persistir todo o estado do carrinho no `localStorage`.

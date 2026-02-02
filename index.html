@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">  
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho</title>
+</head>
+<body>
+    <header>
+        <h1>Carrinho de compras</h1>
+    </header>
+    <main>
+        <div class="container">
+            
+            <section class="produtos">
+                <div class="cardProduto">
+                    <div class="produtoNoCarrinho">
+                      <h2 class="produto">"produto"</h2>
+                      <p>R$</p>
+                    </div>
+                    <p class="preco">50</p>
+                    <button class="menos">-</button>
+                    <p class="quantclassade">0</p>
+                    <button class="mais">+</button>
+                    <button class="btAddCarrinho">Adicionar ao carrinho</button>
+                </div>
+            </section>
+            <h1>Carrinho</h1>
+            <div class="carrinho">
+    
+            </div>
+            <button class="btLimpar">Limpar Carrinho</button>
+        </div>
+    </main>
+</body>
+<script>
+    const botaoAdd = document.getElementById('btAddCarrinho');
+    const carrinho = document.getElementById('carrinho');
+    const produto = document.getElementById('produto');
+    const botaoMais = document.getElementById('mais');
+    const botaoMenos = document.getElementById('menos');
+    const quantidade = document.getElementById('quantidade');
+    let quantidadeNumero = Number(quantidade.textContent);
+    let preco = document.getElementById('preco');
+    let precoNumero = Number(preco.textContent);
+
+    botaoMais.addEventListener('click', function(){
+        quantidadeNumero++;
+        quantidade.textContent = quantidadeNumero;
+        localStorage.setItem('quantidade', quantidade.textContent);
+    });
+
+    botaoMenos.addEventListener('click', function(){
+        if (quantidade.textContent > 0){
+            quantidadeNumero--;
+            quantidade.textContent = quantidadeNumero;
+            localStorage.setItem('quantidade', quantidade.textContent)
+        };
+    });
+
+
+    const cardProduto = document.getElementById('cardProduto');
+    const produtoNoCarrinho = document.getElementById('produtoNoCarrinho');
+    const produtoIndividual = document.getElementById('produto');
+
+    botaoAdd.addEventListener('click', function(){
+        if(quantidadeNumero > 0){
+           h = document.createElement('h3');
+           const precoTotal = precoNumero * quantidadeNumero;
+           carrinho.appendChild(h);
+           h.textContent = produtoNoCarrinho.textContent + precoTotal;
+           quantidade.textContent = 0
+           quantidadeNumero = 0
+           localStorage.setItem('produtoNoCarrinho', produtoIndividual.textContent 
+           + quantidadeNumero);
+           
+        }else{
+            alert('Selecione quantos desse item você quer.');
+        }
+    });
+
+    document.getElementById('btLimpar').addEventListener('click', () =>{
+        localStorage.clear(carrinho);
+        carrinho.textContent = ""
+    });
+
+
+
+</script>
+</html>
